@@ -1,12 +1,10 @@
 package application;
-	
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.stage.Stage;
-
 
 public class Main extends Application {
 	@Override
@@ -14,21 +12,20 @@ public class Main extends Application {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
 			ScrollPane scrollPane = loader.load();
-			
+
 			scrollPane.setFitToHeight(true);
 			scrollPane.setFitToWidth(true);
-			
+
 			Scene scene = new Scene(scrollPane);
-			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			// scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			stage.setScene(scene);
 			stage.setTitle("Projeto JavaFX e Mysql");
 			stage.show();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
 	public static void main(String[] args) {
 		launch(args);
 	}
