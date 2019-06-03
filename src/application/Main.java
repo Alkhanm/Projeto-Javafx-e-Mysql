@@ -7,6 +7,9 @@ import javafx.scene.control.ScrollPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+	
+	private static Scene mainScene;
+	
 	@Override
 	public void start(Stage stage) {
 		try {
@@ -16,14 +19,18 @@ public class Main extends Application {
 			scrollPane.setFitToHeight(true);
 			scrollPane.setFitToWidth(true);
 
-			Scene scene = new Scene(scrollPane);
+			mainScene = new Scene(scrollPane);
 			// scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			stage.setScene(scene);
+			stage.setScene(mainScene);
 			stage.setTitle("Projeto JavaFX e Mysql");
 			stage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public static Scene getMainScene() {
+		return mainScene;
 	}
 
 	public static void main(String[] args) {
