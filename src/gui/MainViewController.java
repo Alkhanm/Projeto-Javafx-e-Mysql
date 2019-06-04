@@ -3,7 +3,6 @@ package gui;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import application.Main;
 import gui.util.Alerts;
 import javafx.fxml.FXML;
@@ -27,6 +26,9 @@ public class MainViewController implements Initializable{
 	@FXML
 	private MenuItem menuItemAbout;
 	
+	@FXML
+	private MenuItem menuExit;
+	
 	
 	@FXML
 	public void onMenuItemSeller() {
@@ -37,19 +39,23 @@ public class MainViewController implements Initializable{
 	public void onMenuItemDepartment() {
 		loadView("/gui/DepartmentList.fxml");
 	}
-	
 	@FXML
 	public void onMenuItemAbout() {
 		loadView("/gui/About.fxml");
 	}
 	
+	@FXML
+	public void onMenuItemExit() {
+		System.exit(0);
+	}
 	
-
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
 		
+		
 	}
 	
+
 	private synchronized void loadView (String absoluteName) {
 		try {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
@@ -65,7 +71,6 @@ public class MainViewController implements Initializable{
 		
 		} catch(IOException e) {
 			Alerts.showAlert("IOExcpetion", null, e.getMessage(), AlertType.ERROR);
-			e.printStackTrace();
 		}
 	}
 	

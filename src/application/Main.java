@@ -20,7 +20,7 @@ public class Main extends Application {
 			scrollPane.setFitToWidth(true);
 
 			mainScene = new Scene(scrollPane);
-			// scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			//scrollPane.getStylesheets().add(getClass().getResource("stylesheet.css").toExternalForm());
 			stage.setScene(mainScene);
 			stage.setTitle("Projeto JavaFX e Mysql");
 			stage.show();
@@ -28,12 +28,12 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
-	
 	public static Scene getMainScene() {
 		return mainScene;
 	}
 
 	public static void main(String[] args) {
+		setUserAgentStylesheet(STYLESHEET_CASPIAN);
 		launch(args);
 	}
 }
