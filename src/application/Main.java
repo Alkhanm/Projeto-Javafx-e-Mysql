@@ -1,5 +1,5 @@
 package application;
-
+//--module-path C:\java-libs\javafx-sdk\lib --add-modules=javafx.fxml,javafx.controls
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
