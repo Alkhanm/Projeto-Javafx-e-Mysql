@@ -20,7 +20,9 @@ import model.services.DepartmentService;
 public class DepartmentFormController implements Initializable {
 
 	private Department entity;
+
 	private DepartmentService service;
+
 	
 	@FXML
 	private TextField txtId;
@@ -91,11 +93,15 @@ public class DepartmentFormController implements Initializable {
 	}
 	//-------------------------//
 	
+	
+	//------------------------//
+	
 	public void setDepartment(Department entity) {
 		this.entity = entity;
 	}
 	public void setDepartmentService(DepartmentService service) {
 		this.service = service;
 	}
+
 	
 }
