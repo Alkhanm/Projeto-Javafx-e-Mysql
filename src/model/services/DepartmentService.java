@@ -12,5 +12,14 @@ public class DepartmentService {
 	public List<Department> findAll() {
 		return dao.findAll();
 	}
+	
+	public void saveOrUpdate(Department obj) {
+		if (obj.getId() == null) { // Caso o id esteja nulo, significa que o metodo irá adicionar um novo objeto
+			dao.insert(obj);
+		} else { // Se já tiver um id é pq o objeto já existe, e então ele será alterado.
+			dao.update(obj);
+		}
+	}
+	
 
 }
