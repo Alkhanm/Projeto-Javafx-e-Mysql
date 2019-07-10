@@ -29,7 +29,7 @@ import model.services.DepartmentService;
 public class DepartmentListController implements Initializable{
 	
 	
-	private DepartmentService service;// n�o colocar um New aqui pq isso seria um aclopamento forte.
+	private DepartmentService service;// não colocar um New aqui pq isso seria um aclopamento forte.
 	
 	@FXML
 	private TableView<Department> tableViewDepartment;
@@ -44,7 +44,7 @@ public class DepartmentListController implements Initializable{
 	@FXML
 	private Button btnNew;
 	
-	//Injetar dep�ndencia
+	//Injetar depêndencia
 	public void setDepartmentService(DepartmentService service) {
 		this.service = service;
 	}
@@ -53,7 +53,8 @@ public class DepartmentListController implements Initializable{
 	@FXML
 	public void onBtnNewAction(ActionEvent event) {
 		Stage parentStage = Utils.currentStage(event);
-		createDialogForm("/gui/DepartmentForm.fxml", parentStage);
+		Department obj = new Department(1, "Void");
+		createDialogForm(obj, "/gui/DepartmentForm.fxml", parentStage);
 	}
 	
 
@@ -82,10 +83,14 @@ public class DepartmentListController implements Initializable{
 		tableViewDepartment.setItems(obsList);
 	}
 	
-	private void createDialogForm(String absoluteName, Stage parentStage) {
+	private void createDialogForm(Department obj, String absoluteName, Stage parentStage) {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
 			Pane pane = loader.load();
+			
+			DepartmentFormController controller = loader.getController();
+			controller.setDepartment(obj);
+			controller.updateFormDate();
 			
 			Stage dialogStage = new Stage();
 			dialogStage.setTitle("Enter Department data");
