@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import db.DB;
-import db.DbException;
+import db.exceptions.DbException;
 import model.dao.DAO_Department;
 import model.entities.Department;
 

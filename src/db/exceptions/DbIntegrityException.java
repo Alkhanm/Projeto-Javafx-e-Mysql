@@ -1,4 +1,4 @@
-package db;
+package db.exceptions;
 
 public class DbIntegrityException extends DbException {
 	private static final long serialVersionUID = 1L;

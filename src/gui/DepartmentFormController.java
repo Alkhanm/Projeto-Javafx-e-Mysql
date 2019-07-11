@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
 
-import db.DbException;
+import db.exceptions.DbException;
 import gui.listerners.DataChangeListener;
 import gui.util.Alerts;
 import gui.util.Constraints;
@@ -31,7 +31,6 @@ public class DepartmentFormController implements Initializable {
 	
 	private List<DataChangeListener> dataChangeListeners = new ArrayList<>();
 
-	
 	@FXML
 	private TextField txtId;
 	
@@ -126,8 +125,6 @@ public class DepartmentFormController implements Initializable {
 	}
 	
 	//-------------------------//
-	
-	
 	
 	public void setDepartment(Department entity) {
 		this.entity = entity;

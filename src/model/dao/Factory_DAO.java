@@ -12,5 +12,4 @@ public class Factory_DAO {
 	public static DAO_Department createDepartmentDAO() {
 		return new DepartmentDAO_jdbc(DB.getConnection());
 	}
-
 }
